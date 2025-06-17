@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      context: .
+      args:
+        - TS_SERVER_QUERY_USERNAME=${TS_SERVER_QUERY_USERNAME}
+        - TS_SERVER_QUERY_PASSWORD=${TS_SERVER_QUERY_PASSWORD}
+        - TS_ADDRESS=${TS_ADDRESS}
+        - TS_PORT=${TS_PORT}
+        - TS_NICKNAME=${TS_NICKNAME}
+        - TS_PROTOCOL=${TS_PROTOCOL}
+    env_file:
+      - .env
+    restart: unless-stopped 
